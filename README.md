@@ -17,12 +17,14 @@ Make the environment, the corpus and the report first. Then count the words of a
 tally is a library too. `count` counts the words of a text, and `top` keeps the most common:
 
 ```python
+from pathlib import Path
+
 from tally import count, top
 
-counts = count("the cat and the hat")
-print(top(counts, 2))
+counts = count(Path("data/corpus.txt").read_text())
+print(top(counts, 3))
 ```
 
-It prints `[('the', 2), ('and', 1)]`.
+It prints `[('line', 127), ('class', 126), ('word', 125)]`, the three most common words of the corpus.
 
 The page [How to run tally](docs/how%20to%20run.md) says more, with a picture of the most common words.
