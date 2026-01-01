@@ -1,3 +1,4 @@
 #!/bin/sh
 # Run before each commit: refuse it if the code does not compile.
 just check
+uv run python -m unittest discover -s tests -q
