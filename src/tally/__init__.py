@@ -2,7 +2,6 @@
 
 import sys
 
-from tabulate import tabulate
 from talib import top
 
 
@@ -12,6 +11,15 @@ def count(text: str) -> dict[str, int]:
     for word in text.lower().split():
         counts[word] = counts.get(word, 0) + 1
     return counts
+
+
+def table(rows: list[tuple[str, int]]) -> str:
+    "The rows under a header and a rule: the words on the left, the counts on the right."
+    left = max([len("word") + 2, *(len(word) for word, _ in rows)])
+    right = max([len("times") + 2, *(len(str(times)) for _, times in rows)])
+    lines = [f"{'word':<{left}}  {'times':>{right}}", f"{'-' * left}  {'-' * right}"]
+    lines += [f"{word:<{left}}  {times:>{right}}" for word, times in rows]
+    return "\n".join(lines)
 
 
 def main() -> None:
@@ -29,7 +37,7 @@ def main() -> None:
     counts = count(text)
     rows = top(counts, n) if n else sorted(counts.items())
     if as_table:
-        print(tabulate(rows, headers=["word", "times"]))
+        print(table(rows))
         return
     for word, times in rows:
         print(times, word)
