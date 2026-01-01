@@ -25,3 +25,11 @@ uv run tally --top 10 data/corpus.txt
 ```
 
 It prints the ten most common words, the most common first.
+
+## A table
+
+```sh
+uv run tally --top 10 --table data/corpus.txt
+```
+
+It prints the same words as a table, with a header.
