@@ -2,6 +2,12 @@ version = 1
 revision = 3
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "talib",
+    "tally",
+]
+
 [[package]]
 name = "markdown-it-py"
 version = "4.2.0"
@@ -70,11 +76,17 @@ wheels = [
 ]
 
 [[package]]
+name = "talib"
+version = "0.1.0"
+source = { editable = "packages/talib" }
+
+[[package]]
 name = "tally"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "tabulate" },
+    { name = "talib" },
 ]
 
 [package.dev-dependencies]
@@ -86,7 +98,10 @@ docs = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "tabulate", specifier = ">=0.9,<0.10" }]
+requires-dist = [
+    { name = "tabulate", specifier = ">=0.9,<0.10" },
+    { name = "talib", editable = "packages/talib" },
+]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = ">=0.17.0" }]
