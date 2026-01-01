@@ -1,5 +1,7 @@
 """tally: count the words in a text."""
 
+import sys
+
 
 def count(text):
     counts = {}
@@ -9,4 +11,6 @@ def count(text):
 
 
 def main() -> None:
-    print("tally: nothing to count yet")
+    text = open(sys.argv[1]).read() if len(sys.argv) > 1 else sys.stdin.read()
+    for word, n in sorted(count(text).items()):
+        print(n, word)
