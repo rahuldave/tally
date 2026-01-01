@@ -26,6 +26,8 @@ uv run tally --top 10 data/corpus.txt
 
 It prints the ten most common words, the most common first.
 
+![The ten most common words of the corpus, as bars](tally.png)
+
 ## A table
 
 ```sh
