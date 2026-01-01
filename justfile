@@ -20,3 +20,7 @@ test:
 report:
     mkdir -p build
     uv run tally --top 10 data/corpus.txt > build/top.txt
+
+# Check that the README and the docs are formatted as mdformat formats them
+docs:
+    uv run mdformat --check README.md docs
