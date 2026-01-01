@@ -3,7 +3,7 @@
 import sys
 from pathlib import Path
 
-WORDS = "the a word count text tally test step move commit tag note slide class shell file line code".split()
+WORDS = ["the", "a", "word", "count", "text", "tally", "test", "step", "move", "commit", "tag", "note", "slide", "class", "shell", "file", "line", "code"]
 
 
 def main() -> None:
