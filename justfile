@@ -13,3 +13,7 @@ run file:
 # Run the tests
 test:
     uv run python -m unittest discover -s tests -q
+
+# Check that every Python file compiles
+check:
+    uv run python -m py_compile src/tally/*.py
