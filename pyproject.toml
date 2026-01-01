@@ -28,3 +28,8 @@ line-length = 100
 
 [tool.uv]
 default-groups = ["dev", "docs"]
+
+[tool.uv.workspace]
+members = [
+    "packages/talib",
+]
