@@ -24,3 +24,5 @@ print(top(counts, 2))
 ```
 
 It prints `[('the', 2), ('and', 1)]`.
+
+The page [How to run tally](docs/how%20to%20run.md) says more, with a picture of the most common words.
