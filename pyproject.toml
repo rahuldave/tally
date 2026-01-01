@@ -17,3 +17,6 @@ build-backend = "uv_build"
 dev = [
     "ruff>=0.17.0",
 ]
+
+[tool.ruff]
+line-length = 100
