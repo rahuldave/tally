@@ -35,3 +35,11 @@ uv run tally --top 10 --table data/corpus.txt
 ```
 
 It prints the same words as a table, with a header.
+
+## Check the docs
+
+```sh
+just docs
+```
+
+It prints nothing when every page of the docs is formatted as mdformat formats it.
