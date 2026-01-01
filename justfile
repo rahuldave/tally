@@ -17,3 +17,7 @@ test:
 # Check that every Python file compiles
 check:
     uv run python -m py_compile src/tally/*.py
+
+# Make git run the hooks in hooks/, before each commit. This changes git's config, so it is not part of setup
+install-hook:
+    git config core.hooksPath hooks
