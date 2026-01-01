@@ -11,3 +11,16 @@ Make the environment, the corpus and the report first. Then count the words of a
 
 `uv run tally --top 10 data/corpus.txt` prints only the ten most common words. `just test` runs the tests, and
 `just report` writes the ten most common words of the corpus to `build/top.txt`.
+
+## Count from Python
+
+tally is a library too. `count` counts the words of a text, and `top` keeps the most common:
+
+```python
+from tally import count, top
+
+counts = count("the cat and the hat")
+print(top(counts, 2))
+```
+
+It prints `[('the', 2), ('and', 1)]`.
