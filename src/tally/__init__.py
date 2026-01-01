@@ -3,6 +3,7 @@
 import sys
 
 from tabulate import tabulate
+from talib import top
 
 
 def count(text: str) -> dict[str, int]:
@@ -11,11 +12,6 @@ def count(text: str) -> dict[str, int]:
     for word in text.lower().split():
         counts[word] = counts.get(word, 0) + 1
     return counts
-
-
-def top(counts: dict[str, int], n: int) -> list[tuple[str, int]]:
-    "The n most common words, most common first."
-    return sorted(counts.items(), key=lambda pair: (-pair[1], pair[0]))[:n]
 
 
 def main() -> None:
