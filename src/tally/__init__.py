@@ -21,7 +21,11 @@ def main() -> None:
     args, n = [arg for arg in args if arg != "--table"], None
     if args[:1] == ["--top"]:
         n, args = int(args[1]), args[2:]
-    text = open(args[0]).read() if args else sys.stdin.read()
+    if args:
+        with open(args[0]) as file:
+            text = file.read()
+    else:
+        text = sys.stdin.read()
     counts = count(text)
     rows = top(counts, n) if n else sorted(counts.items())
     if as_table:
