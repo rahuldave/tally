@@ -19,6 +19,12 @@ build-backend = "uv_build"
 dev = [
     "ruff>=0.17.0",
 ]
+docs = [
+    "mdformat>=1.0.0",
+]
 
 [tool.ruff]
 line-length = 100
+
+[tool.uv]
+default-groups = ["dev", "docs"]
